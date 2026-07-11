@@ -1,3 +1,12 @@
+## [1.1.2](https://github.com/CoCreate-app/CoCreate-clipboard/compare/v1.1.1...v1.1.2) (2026-07-11)
+
+
+### Bug Fixes
+
+* bump package versions ([4802ef1](https://github.com/CoCreate-app/CoCreate-clipboard/commit/4802ef11961218c2ed071f2c08f39f00130b839e))
+* removed post install and add add packages to apprved list ([1b2701f](https://github.com/CoCreate-app/CoCreate-clipboard/commit/1b2701f833e4e7b8b39d5c6078428f1585b01935))
+* semantic version handling ([d5f849d](https://github.com/CoCreate-app/CoCreate-clipboard/commit/d5f849dc16702952e359e3a227dd7c2da6f6f2f4))
+
 ## [1.1.1](https://github.com/CoCreate-app/CoCreate-clipboard/compare/v1.1.0...v1.1.1) (2026-01-18)
 
 
