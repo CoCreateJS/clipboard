@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/CoCreate-app/CoCreate-clipboard/compare/v1.1.2...v1.2.0) (2026-07-17)
+
+
+### Features
+
+* update automated workflow and release configuration for improved semantic release handling ([2b573e6](https://github.com/CoCreate-app/CoCreate-clipboard/commit/2b573e6c36e92f8615769e0408e1ebaa0bef236b))
+
 ## [1.1.2](https://github.com/CoCreate-app/CoCreate-clipboard/compare/v1.1.1...v1.1.2) (2026-07-11)
 
 
