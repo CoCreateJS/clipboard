@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/CoCreate-app/CoCreate-clipboard/compare/v1.2.0...v1.2.1) (2026-07-17)
+
+
+### Bug Fixes
+
+* bump dependencies ([b965074](https://github.com/CoCreate-app/CoCreate-clipboard/commit/b96507433d68007e378ab6aa061f7a925a110e6a))
+
 # [1.2.0](https://github.com/CoCreate-app/CoCreate-clipboard/compare/v1.1.2...v1.2.0) (2026-07-17)
 
 
