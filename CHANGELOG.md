@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/CoCreate-app/CoCreate-clipboard/compare/v1.2.1...v1.2.2) (2026-07-19)
+
+
+### Bug Fixes
+
+* set default branch to main ([65e7f7f](https://github.com/CoCreate-app/CoCreate-clipboard/commit/65e7f7f02e62af923a1a3417730dbc408559d165))
+
 ## [1.2.1](https://github.com/CoCreate-app/CoCreate-clipboard/compare/v1.2.0...v1.2.1) (2026-07-17)
 
 
