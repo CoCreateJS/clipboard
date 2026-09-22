@@ -64,8 +64,10 @@ async function clipboard(element, elements) {
 		const clipboardItems = [];
 
 		for (let element of elements) {
-			let value = await element.getValue();
 			const valueType = element.getAttribute("clipboard-value-type");
+			let value = valueType === "text"
+				? (element.value ?? element.textContent ?? "")
+				: await element.getValue();
 			if (valueType === "innerText") {
 				value = value.replace(/<[^>]*>/g, "");
 				new ClipboardItem({
@@ -118,7 +120,7 @@ Actions.init([
 		name: "clipboard",
 		endEvent: "clipboarded",
 		callback: (action) => {
-			queryClipboardElement(action);
+			queryClipboardElement(action.element || action);
 		}
 	}
 ]);
