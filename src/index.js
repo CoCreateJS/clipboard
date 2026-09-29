@@ -63,19 +63,9 @@ async function clipboard(element, elements) {
 	try {
 		const clipboardItems = [];
 
-		for (let element of elements) {
-			const valueType = element.getAttribute("clipboard-value-type");
-			let value = valueType === "text"
-				? (element.value ?? element.textContent ?? "")
-				: await element.getValue();
-			if (valueType === "innerText") {
-				value = value.replace(/<[^>]*>/g, "");
-				new ClipboardItem({
-					"text/plain": new Blob([value], {
-						type: "text/plain"
-					})
-				});
-			} else if (typeof value === "string") {
+		for (const target of elements) {
+			const value = await target.getValue();
+			if (typeof value === "string") {
 				// Handle string content as plain text
 				clipboardItems.push(
 					new ClipboardItem({
@@ -89,7 +79,16 @@ async function clipboard(element, elements) {
 				// Handle Blob content directly
 				clipboardItems.push(
 					new ClipboardItem({
-						[value.type]: value
+						[value.type || "application/octet-stream"]: value
+					})
+				);
+			} else if (value !== undefined) {
+				const content = JSON.stringify(value, null, 2);
+				clipboardItems.push(
+					new ClipboardItem({
+						"text/plain": new Blob([content], {
+							type: "text/plain"
+						})
 					})
 				);
 			} else {
