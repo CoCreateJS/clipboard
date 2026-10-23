@@ -10,7 +10,9 @@ import { queryElements } from "@cocreate/utils";
 import Actions from "@cocreate/actions";
 import Observer from "@cocreate/observer";
 
-const selector = "[clipboard-query]";
+const selector = "[clipboard], [clipboard-query]";
+const initialized = new WeakSet();
+const pending = new WeakMap();
 
 function init(element) {
 	if (!element) {
@@ -30,12 +32,13 @@ function init(element) {
 }
 
 function initElement(element) {
-	// Add a click event listener to trigger the clipboard action
+	if (initialized.has(element)) return;
+	initialized.add(element);
 	element.addEventListener("click", () => {
-		let actions = element.getAttribute("actions");
-		if (actions && !actions.includes("clipboard")) {
-			queryClipboardElement(element);
-		}
+		if (
+			element.matches(selector) && !element.hasAttribute("actions") &&
+			!element.disabled && element.getAttribute("aria-disabled") !== "true"
+		) queryClipboardElement(element);
 	});
 }
 
@@ -47,11 +50,17 @@ function queryClipboardElement(element) {
 		elements = [element];
 	}
 
-	clipboard(element, elements);
+	return clipboard(element, elements);
 }
 
-async function clipboard(element, elements) {
-	if (!elements) return;
+function clipboard(element, elements = [element]) {
+	if (pending.has(element)) return pending.get(element);
+	const operation = copy(element, elements).finally(() => pending.delete(element));
+	pending.set(element, operation);
+	return operation;
+}
+
+async function copy(element, elements) {
 	if (
 		!(elements instanceof HTMLCollection) &&
 		!(elements instanceof NodeList) &&
@@ -61,6 +70,7 @@ async function clipboard(element, elements) {
 	}
 
 	try {
+		element.setAttribute("clipboard", "copying");
 		const clipboardItems = [];
 
 		for (const target of elements) {
@@ -99,16 +109,23 @@ async function clipboard(element, elements) {
 		if (clipboardItems.length > 0) {
 			await navigator.clipboard.write(clipboardItems);
 		} else {
-			console.warn("No valid content to copy to clipboard.");
+			throw new Error("No valid content to copy to clipboard.");
 		}
 
+		element.setAttribute("clipboard", "copied");
 		element.dispatchEvent(
 			new CustomEvent("clipboarded", {
+				bubbles: true,
 				detail: { clipboardItems }
 			})
 		);
+		return { clipboardItems };
 	} catch (error) {
-		console.error("Failed to copy to clipboard:", error);
+		element.setAttribute("clipboard", "error");
+		element.dispatchEvent(new CustomEvent("clipboard-error", {
+			bubbles: true, detail: { error }
+		}));
+		return { error };
 	}
 }
 
@@ -118,8 +135,9 @@ Actions.init([
 	{
 		name: "clipboard",
 		endEvent: "clipboarded",
-		callback: (action) => {
-			queryClipboardElement(action.element || action);
+		callback: async (action) => {
+			const result = await queryClipboardElement(action.element || action);
+			if (result.error) action.abort(result.error);
 		}
 	}
 ]);
@@ -129,17 +147,17 @@ Observer.init({
 	types: ["addedNodes"],
 	selector,
 	callback(mutation) {
-		initElement(mutation.target);
+		init(mutation.target);
 	}
 });
 
 Observer.init({
 	name: "CoCreateClipboardObserver",
 	types: ["attributes"],
-	attributeFilter: ["clipboard-query"],
+	attributeFilter: ["clipboard", "clipboard-query"],
 	selector,
 	callback: function (mutation) {
-		initElement(mutation.target);
+		init(mutation.target);
 	}
 });
 

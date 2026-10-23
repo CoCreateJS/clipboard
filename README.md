@@ -1,6 +1,6 @@
 # CoCreate-clipboard
 
-Highlights syntax within a textarea. Easily configured using HTML5 attributes and/or JavaScript API. Take it for a spin in our [playground!](https://cocreate.app/docs/clipboard)
+Copies element values to the clipboard. Easily configured using HTML5 attributes and/or JavaScript API. Take it for a spin in our [playground!](https://cocreate.app/docs/clipboard)
 
 ![min file size in bytes](https://img.badgesize.io/https://cdn.cocreate.app/clipboard/latest/CoCreate-clipboard.min.js?style=flat-square&label=minified&color=orange)
 ![gzip file size in bytes](https://img.badgesize.io/https://cdn.cocreate.app/clipboard/latest/CoCreate-clipboard.min.js?compression=gzip&style=flat-square&label=gzip&color=yellow)
@@ -14,6 +14,35 @@ Highlights syntax within a textarea. Easily configured using HTML5 attributes an
 ## [Docs & Demo](https://cocreate.app/docs/clipboard)
 
 For a complete guide and working demo refer to the [doumentation](https://cocreate.app/docs/clipboard)
+
+## Declarative controls
+
+Use `clipboard` on an element to copy its own value, or `clipboard-query` to
+select the source. Either attribute initializes a click listener, including on
+dynamically added elements.
+
+```html
+<button clipboard>Copy this text</button>
+<button clipboard-query="#message">Copy message</button>
+<textarea id="message">Hello</textarea>
+```
+
+The trigger's `clipboard` attribute reflects `copying`, `copied`, or `error`.
+These are output states: changing the value does not initiate a copy. Each click
+copies again, including when the attribute already contains a state. The state
+remains until the next copy; no timer or CSS is required.
+
+```css
+[clipboard] .copy-success { display: none; }
+[clipboard="copied"] .copy-success { display: inline; }
+[clipboard="copied"] .copy-icon { display: none; }
+```
+
+Successful copies emit the existing `clipboarded` event with `detail.clipboardItems`.
+Failures emit `clipboard-error` with `detail.error`. Both events bubble, and state
+is updated before the event fires. Elements with `actions` defer to the Actions
+chain; use `actions="clipboard"` with either clipboard attribute. Disabled controls
+and controls with `aria-disabled="true"` do not copy on click.
 
 ## CDN
 
