@@ -27,9 +27,9 @@
   "author": "CoCreate LLC",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CoCreate-app/CoCreate-clipboard/issues"
+    "url": "https://github.com/CoCreateJS/CoCreate-clipboard/issues"
   },
-  "homepage": "https://cocreate.app/docs/clipboard",
+  "homepage": "https://CoCreateJS.com/docs/clipboard",
   "cocreate": {
     "environment": [
       "client"

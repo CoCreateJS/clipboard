@@ -1,14 +1,14 @@
 # Contributing to CoCreate-clipboard
 
-This project is work of [many contributors](https://github.com/CoCreate-app/CoCreate-clipboard/graphs/contributors).
-You're encouraged to submit [pull requests](https://github.com/CoCreate-app/CoCreate-clipboard/pulls),
-[propose features and discuss issues](https://github.com/CoCreate-app/CoCreate-clipboard/issues).
+This project is work of [many contributors](https://github.com/CoCreateJS/CoCreate-clipboard/graphs/contributors).
+You're encouraged to submit [pull requests](https://github.com/CoCreateJS/CoCreate-clipboard/pulls),
+[propose features and discuss issues](https://github.com/CoCreateJS/CoCreate-clipboard/issues).
 
 In the examples below, substitute your Github username for `contributor` in URLs.
 
 ## Fork the Project
 
-Fork the [project on Github](https://github.com/CoCreate-app/CoCreate-clipboard) and check out your copy.
+Fork the [project on Github](https://github.com/CoCreateJS/CoCreate-clipboard) and check out your copy.
 
 ```
 git clone https://github.com/contributor/CoCreate-clipboard.git
@@ -74,7 +74,7 @@ git push origin my-feature-branch
 
 ## Make a Pull Request
 
-Go to [https://github.com/CoCreate-app/CoCreate-clipboard](https://github.com/CoCreate-app/CoCreate-clipboard) and select your feature branch.
+Go to [https://github.com/CoCreateJS/CoCreate-clipboard](https://github.com/CoCreateJS/CoCreate-clipboard) and select your feature branch.
 Click the 'Pull Request' button and fill out the form. Pull requests are usually reviewed within a few days.
 
 ## Rebase

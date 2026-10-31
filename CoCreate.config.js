@@ -10,7 +10,7 @@ module.exports = {
 				name: "index.html",
 				path: "/docs/clipboard/index.html",
 				src: "{{./docs/index.html}}",
-				host: ["cocreate.app", "general.cocreate.app"],
+				host: ["CoCreateJS.com", "general.CoCreateJS.com"],
 				directory: "clipboard",
 				"content-type": "{{content-type}}",
 				public: "true"
