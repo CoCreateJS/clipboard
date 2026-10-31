@@ -13,7 +13,7 @@ Fork the [project on Github](https://github.com/CoCreate-app/CoCreate-clipboard)
 ```
 git clone https://github.com/contributor/CoCreate-clipboard.git
 cd CoCreate-clipboard
-git remote add upstream https://gitlab.com/cocreatejs/CoCreate-clipboard.git
+git remote add upstream https://github.com/cocreatejs/CoCreate-clipboard.git
 ```
 
 ## Create a Topic Branch
