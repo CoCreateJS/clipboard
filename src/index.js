@@ -14,6 +14,12 @@ const selector = "[clipboard], [clipboard-query]";
 const initialized = new WeakSet();
 const pending = new WeakMap();
 
+/**
+ * Initializes matching elements. With no argument, scans the document; accepts an element, collection, NodeList, or array.
+ *
+ * @public
+ * @environment client
+ */
 function init(element) {
 	if (!element) {
 		element = document.querySelectorAll(selector);
@@ -53,6 +59,12 @@ function queryClipboardElement(element) {
 	return clipboard(element, elements);
 }
 
+/**
+ * Copies values from the supplied source elements to the system clipboard and returns a promise for the result.
+ *
+ * @public
+ * @environment client
+ */
 function clipboard(element, elements = [element]) {
 	if (pending.has(element)) return pending.get(element);
 	const operation = copy(element, elements).finally(() => pending.delete(element));
@@ -162,3 +174,140 @@ Observer.init({
 });
 
 export default { init, clipboard };
+
+/**
+ * Bubbles after a successful copy; detail contains clipboardItems.
+ *
+ * @name clipboarded
+ * @kind member
+ * @public
+ * @environment client
+ */
+
+/**
+ * Bubbles when copying fails; detail contains the error.
+ *
+ * @name clipboard-error
+ * @kind member
+ * @public
+ * @environment client
+ */
+
+/**
+ * Copies the element's own value when used as a declarative control; also reflects the current operation state.
+ *
+ * @name clipboard
+ * @kind member
+ * @attribute
+ * @valueType string
+ * @acceptedValues copying, copied, error
+ * @environment client
+ */
+
+/**
+ * Selects source elements relative to the control using CoCreate queryElements with the clipboard prefix.
+ *
+ * @name clipboard-query
+ * @kind member
+ * @attribute
+ * @valueType string
+ * @environment client
+ */
+
+/**
+ * Declarative actions supported or registered by this module.
+ *
+ * @name declarative-actions
+ * @kind member
+ * @actions
+ * @environment client
+ * @example
+ * ```json
+ * [
+ *   {
+ *     "name": "clipboard",
+ *     "description": "Copies the value of the action element or the elements selected by its clipboard-query attribute.",
+ *     "endEvent": "clipboarded",
+ *     "failure": "Aborts the action chain with the copy error."
+ *   }
+ * ]
+ * ```
+ */
+
+/**
+ * Declarative binding behavior for this module.
+ *
+ * @name declarative-binding
+ * @kind member
+ * @binding
+ * @environment client
+ * @example
+ * ```json
+ * {
+ *   "selector": "[clipboard], [clipboard-query]",
+ *   "trigger": "click",
+ *   "initializesExistingElements": true,
+ *   "observesAddedNodes": true,
+ *   "actionsIntegration": "When an element has an actions attribute, direct click handling is skipped."
+ * }
+ * ```
+ */
+
+/**
+ * Value conversion and handling behavior for this module.
+ *
+ * @name declarative-valueHandling
+ * @kind member
+ * @valueHandling
+ * @environment client
+ * @example
+ * ```json
+ * {
+ *   "string": [
+ *     "text/plain",
+ *     "text/html"
+ *   ],
+ *   "blob": "Copied using its MIME type, or application/octet-stream when the type is empty.",
+ *   "otherDefinedValues": "JSON-stringified and copied as text/plain.",
+ *   "undefined": "Ignored; if no valid ClipboardItems remain, the operation fails."
+ * }
+ * ```
+ */
+
+/**
+ * Result shape and state metadata for this API.
+ *
+ * @name api-result
+ * @kind member
+ * @result
+ * @environment client
+ * @example
+ * ```json
+ * {
+ *   "success": "{ clipboardItems }",
+ *   "failure": "{ error }",
+ *   "stateAttribute": "clipboard",
+ *   "stateValues": [
+ *     "copying",
+ *     "copied",
+ *     "error"
+ *   ]
+ * }
+ * ```
+ */
+
+/**
+ * Usage constraints for this API.
+ *
+ * @name api-constraints
+ * @kind member
+ * @constraints
+ * @environment client
+ * @example
+ * ```json
+ * [
+ *   "Direct click handling skips disabled controls and controls with aria-disabled=\"true\".",
+ *   "Copying requires browser support for navigator.clipboard.write and ClipboardItem, plus the browser's applicable clipboard permissions and context requirements."
+ * ]
+ * ```
+ */
