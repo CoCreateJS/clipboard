@@ -22,17 +22,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cocreatejs/CoCreate-clipboard.git"
+    "url": "git+https://github.com/CoCreateJS/clipboard.git"
   },
   "author": "CoCreate LLC",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CoCreateJS/CoCreate-clipboard/issues"
+    "url": "https://github.com/CoCreateJS/clipboard/issues"
   },
   "homepage": "https://CoCreateJS.com/docs/clipboard",
   "funding": {
     "type": "GitHub Sponsors ❤",
-    "url": "https://github.com/sponsors/CoCreate-app"
+    "url": "https://github.com/sponsors/CoCreateJS"
   },
   "main": "./src/index.js",
   "dependencies": {

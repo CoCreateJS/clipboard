@@ -1,19 +1,19 @@
 # Contributing to CoCreate-clipboard
 
-This project is work of [many contributors](https://github.com/CoCreateJS/CoCreate-clipboard/graphs/contributors).
-You're encouraged to submit [pull requests](https://github.com/CoCreateJS/CoCreate-clipboard/pulls),
-[propose features and discuss issues](https://github.com/CoCreateJS/CoCreate-clipboard/issues).
+This project is work of [many contributors](https://github.com/CoCreateJS/clipboard/graphs/contributors).
+You're encouraged to submit [pull requests](https://github.com/CoCreateJS/clipboard/pulls),
+[propose features and discuss issues](https://github.com/CoCreateJS/clipboard/issues).
 
 In the examples below, substitute your Github username for `contributor` in URLs.
 
 ## Fork the Project
 
-Fork the [project on Github](https://github.com/CoCreateJS/CoCreate-clipboard) and check out your copy.
+Fork the [project on Github](https://github.com/CoCreateJS/clipboard) and check out your copy.
 
 ```
 git clone https://github.com/contributor/CoCreate-clipboard.git
 cd CoCreate-clipboard
-git remote add upstream https://github.com/cocreatejs/CoCreate-clipboard.git
+git remote add upstream https://github.com/CoCreateJS/clipboard.git
 ```
 
 ## Create a Topic Branch
@@ -74,7 +74,7 @@ git push origin my-feature-branch
 
 ## Make a Pull Request
 
-Go to [https://github.com/CoCreateJS/CoCreate-clipboard](https://github.com/CoCreateJS/CoCreate-clipboard) and select your feature branch.
+Go to [https://github.com/CoCreateJS/clipboard](https://github.com/CoCreateJS/clipboard) and select your feature branch.
 Click the 'Pull Request' button and fill out the form. Pull requests are usually reviewed within a few days.
 
 ## Rebase

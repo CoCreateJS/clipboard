@@ -5,8 +5,8 @@ Copies element values to the clipboard. Easily configured using HTML5 attributes
 ![min file size in bytes](https://img.badgesize.io/https://cdn.CoCreateJS.com/clipboard/latest/CoCreate-clipboard.min.js?style=flat-square&label=minified&color=orange)
 ![gzip file size in bytes](https://img.badgesize.io/https://cdn.CoCreateJS.com/clipboard/latest/CoCreate-clipboard.min.js?compression=gzip&style=flat-square&label=gzip&color=yellow)
 ![brotlifile size in bytes](https://img.badgesize.io/https://cdn.CoCreateJS.com/clipboard/latest/CoCreate-clipboard.min.js?compression=brotli&style=flat-square&label=brotli)
-![GitHub latest release](https://img.shields.io/github/v/release/CoCreate-app/CoCreate-clipboard?style=flat-square)
-![GitHub](https://img.shields.io/github/license/CoCreate-app/CoCreate-clipboard?style=flat-square)
+![GitHub latest release](https://img.shields.io/github/v/release/CoCreateJS/clipboard?style=flat-square)
+![GitHub](https://img.shields.io/github/license/CoCreateJS/clipboard?style=flat-square)
 ![GitHub](https://img.shields.io/static/v1?style=flat-square&label=&message=Hiring&color=blueviolet)
 
 ![CoCreate-clipboard](https://cdn.CoCreateJS.com/docs/CoCreate-clipboard.gif)
@@ -79,13 +79,13 @@ $ yarn install @cocreate/clipboard
 
 # Announcements
 
-All updates to this library are documented in our [CHANGELOG](https://github.com/CoCreateJS/CoCreate-clipboard/blob/master/CHANGELOG.md) and [releases](https://github.com/CoCreateJS/CoCreate-clipboard/releases). You may also subscribe to email for releases and breaking changes.
+All updates to this library are documented in our [CHANGELOG](https://github.com/CoCreateJS/clipboard/blob/master/CHANGELOG.md) and [releases](https://github.com/CoCreateJS/clipboard/releases). You may also subscribe to email for releases and breaking changes.
 
 <a name="roadmap"></a>
 
 # Roadmap
 
-If you are interested in the future direction of this project, please take a look at our open [issues](https://github.com/CoCreateJS/CoCreate-clipboard/issues) and [pull requests](https://github.com/CoCreateJS/CoCreate-clipboard/pulls). We would love to hear your feedback.
+If you are interested in the future direction of this project, please take a look at our open [issues](https://github.com/CoCreateJS/clipboard/issues) and [pull requests](https://github.com/CoCreateJS/clipboard/pulls). We would love to hear your feedback.
 
 <a name="about"></a>
 
@@ -101,12 +101,12 @@ CoCreate-clipboard is maintained and funded by CoCreate. The names and logos for
 
 # How to Contribute
 
-We encourage contribution to our libraries (you might even score some nifty swag), please see our [CONTRIBUTING](https://github.com/CoCreateJS/CoCreate-clipboard/blob/master/CONTRIBUTING.md) guide for details.
+We encourage contribution to our libraries (you might even score some nifty swag), please see our [CONTRIBUTING](https://github.com/CoCreateJS/clipboard/blob/master/CONTRIBUTING.md) guide for details.
 
-We want this library to be community-driven, and CoCreate led. We need your help to realize this goal. To help make sure we are building the right things in the right order, we ask that you create [issues](https://github.com/CoCreateJS/CoCreate-clipboard/issues) and [pull requests](https://github.com/CoCreateJS/CoCreate-clipboard/pulls) or merely upvote or comment on existing issues or pull requests.
+We want this library to be community-driven, and CoCreate led. We need your help to realize this goal. To help make sure we are building the right things in the right order, we ask that you create [issues](https://github.com/CoCreateJS/clipboard/issues) and [pull requests](https://github.com/CoCreateJS/clipboard/pulls) or merely upvote or comment on existing issues or pull requests.
 
 We appreciate your continued support, thank you!
 
 # License
 
-[The MIT License (MIT)](https://github.com/CoCreateJS/CoCreate-clipboard/blob/master/LICENSE)
+[The MIT License (MIT)](https://github.com/CoCreateJS/clipboard/blob/master/LICENSE)
