@@ -1,3 +1,28 @@
+# [2.0.0](https://github.com/CoCreateJS/clipboard/compare/v1.2.2...v2.0.0) (2026-11-02)
+
+
+### Bug Fixes
+
+* add Deno specific entries to .gitignore ([df7ed52](https://github.com/CoCreateJS/clipboard/commit/df7ed528a533cef9158573f2293b7ae11adaa484))
+* bump [@cocreate](https://github.com/cocreate) dependencies ([8b7a4b9](https://github.com/CoCreateJS/clipboard/commit/8b7a4b9fbc0e888eb4f95caa979ccb1ad4244dcb))
+* bump [@cocreate](https://github.com/cocreate) package versions ([bcb7ccb](https://github.com/CoCreateJS/clipboard/commit/bcb7ccbe1123d9815142e4a781284903704f7b00))
+* bump versions ([9745901](https://github.com/CoCreateJS/clipboard/commit/9745901c54b7a61ddb691d2bd12a690df058d474))
+* bump versions ([791f6c9](https://github.com/CoCreateJS/clipboard/commit/791f6c992c41a4c0eaff12880fc228e6556247ec))
+* remove trailing slash from node_modules entry in .gitignore ([e81f21a](https://github.com/CoCreateJS/clipboard/commit/e81f21ad45d395cf448a64be00023471ca155928))
+* update git url ([2f8d441](https://github.com/CoCreateJS/clipboard/commit/2f8d441936df84a9ae6fec3516de2832a7f02fbf))
+* update GitHub Actions to use latest versions and sync package.json description ([e5fe7ed](https://github.com/CoCreateJS/clipboard/commit/e5fe7edbd09b1af22fc466f980e4558664e2d9cb))
+
+
+### Features
+
+* align CoCreate repository and package naming ([eb6179d](https://github.com/CoCreateJS/clipboard/commit/eb6179d40d7251a1e78cd8fc40508c6355b0546a))
+* replace uuid import and usage with utils ([05054ce](https://github.com/CoCreateJS/clipboard/commit/05054ce8454cfd26c16f10c64c83f89955d94ba4))
+
+
+### BREAKING CHANGES
+
+* consumers must use the renamed CoCreate package and repository identities; the previous prefixed names are no longer supported.
+
 ## [1.2.2](https://github.com/CoCreateJS/CoCreate-clipboard/compare/v1.2.1...v1.2.2) (2026-07-19)
 
 
