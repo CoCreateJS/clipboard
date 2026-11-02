@@ -197,8 +197,7 @@ export default { init, clipboard };
  * Copies the element's own value when used as a declarative control; also reflects the current operation state.
  *
  * @name clipboard
- * @kind member
- * @attribute
+ * @kind attribute
  * @valueType string
  * @acceptedValues copying, copied, error
  * @environment client
@@ -208,8 +207,7 @@ export default { init, clipboard };
  * Selects source elements relative to the control using CoCreate queryElements with the clipboard prefix.
  *
  * @name clipboard-query
- * @kind member
- * @attribute
+ * @kind attribute
  * @valueType string
  * @environment client
  */
