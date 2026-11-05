@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/CoCreateJS/clipboard/compare/v2.0.0...v2.0.1) (2026-11-05)
+
+
+### Bug Fixes
+
+* upgrade CoCreate dependencies to v2 ([4874741](https://github.com/CoCreateJS/clipboard/commit/4874741b70fcf9c05768365c39c61ad232f62531))
+
 # [2.0.0](https://github.com/CoCreateJS/clipboard/compare/v1.2.2...v2.0.0) (2026-11-02)
 
 
